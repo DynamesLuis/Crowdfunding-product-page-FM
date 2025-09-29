@@ -15,6 +15,18 @@
     font-family: 'Commissioner', Arial, Helvetica, sans-serif;
 }
 
+button {
+    border: none;
+    cursor: pointer;
+    &.green-btn {
+        background: var(--Green-400);
+        padding: 1em 2em;
+        border-radius: 30px;
+        color: white;
+        font-weight: 700;
+    }
+}
+
 header {
     padding: 1.5em;
     background-image: url("./images/image-hero-mobile.jpg");
@@ -55,4 +67,52 @@ nav ul li {
     &last-of-type {
         border: none;
     }
+}
+
+main {
+    padding: 1em;
+}
+
+main>section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.info-section {
+    position: relative;
+    top: -5em;
+    padding-top: 4em;
+    text-align: center;
+}
+
+.info-section .logo {
+    width: 4.2em;
+    position: absolute;
+    left: 50%;
+    top: -2.5em;
+    transform: translateX(-50%);
+}
+
+.info-section p {
+    margin-top: 1em;
+    color: var(--Gray-500);
+    font-weight: 500;
+    line-height: 1.8em;
+}
+
+.btn-container {
+    display: flex;
+    gap: 1em;
+    margin-top: 1.8em;
+}
+
+.info-section .back-btn {
+    flex: 1;
+    font-size: 18px;
+}
+
+.info-section .bookmark-btn {
+    background-color: transparent;
 }
