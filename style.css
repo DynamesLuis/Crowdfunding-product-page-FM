@@ -288,7 +288,7 @@ main>section {
 }
 
 .background-modal.reward {
-    display: block;
+    display: none;
     overflow-y: scroll;
 }
 
@@ -329,6 +329,10 @@ main>section {
     &.out-of-stock {
         opacity: .5;
     }
+}
+
+.options-container article:has(input[type="radio"]:checked) {
+    border: 1px solid var(--Green-400);
 }
 
 .options-container article>div {
@@ -374,6 +378,7 @@ main>section {
 }
 
 .options-container .enter-pledge {
+    display: none;
     text-align: center;
     margin-top: 1em;
     color: var(--Gray-500);
@@ -381,9 +386,6 @@ main>section {
     border-top: 1px solid var(--Gray-500);
 }
 
-/*to do
-input and button width 50%
-*/
 .pledge-input {
     margin-top: 1em;
     padding: 1em;
