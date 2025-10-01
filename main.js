@@ -1,13 +1,17 @@
 const $navBtn = document.querySelector(".nav-btn");
 const $backBtn = document.querySelector(".back-btn");
 const $bookmarkBtn = document.querySelector(".bookmark-btn");
+const $selectBtns = document.querySelectorAll(".select-btn");
 
 initEvents();
 
 function initEvents() {
     $navBtn.addEventListener('click', handleMenu);
-    $backBtn.addEventListener('click', showRewardModal);
+    $backBtn.addEventListener('click', () => showRewardModal(""));
     $bookmarkBtn.addEventListener('click', handleBookmark);
+    $selectBtns.forEach($selectBtn => {
+        $selectBtn.addEventListener('click', () => showRewardModal($selectBtn.dataset.target));
+    });
 }
 
 function handleMenu() {
@@ -24,14 +28,20 @@ function handleMenu() {
     }
 }
 
-function showRewardModal() {
+function showRewardModal(value) {
     const $rewardModal = document.querySelector(".reward");
     $rewardModal.style.display = "block";
+
+    const $input = $rewardModal.querySelector(`input[data-target="${value}"]`);
+    if ($input) {
+        $input.checked = true;
+    }
 
     const $closeBtn = $rewardModal.querySelector(".closemodal-btn");
     $closeBtn.addEventListener('click', () => {
         $rewardModal.style.display = "none";
-    })
+        resetInputs();
+    });
 }
 function handleBookmark() {
     $bookmarkBtn.classList.toggle("bookmarked");
@@ -41,4 +51,9 @@ function handleBookmark() {
     } else {
         $imgBtn.src = "./images/icon-bookmark.svg";
     }
+}
+
+function resetInputs() {
+    $inputs = document.querySelectorAll('input[name="option"]');
+    $inputs.forEach($input => $input.checked = false);
 }
