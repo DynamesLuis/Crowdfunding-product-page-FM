@@ -18,6 +18,7 @@
 button {
     border: none;
     cursor: pointer;
+
     &.green-btn {
         background: var(--Green-400);
         padding: 1em 2em;
@@ -115,4 +116,40 @@ main>section {
 
 .info-section .bookmark-btn {
     background-color: transparent;
+}
+
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 4em;
+}
+
+.stats-section p {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--Black);
+}
+
+.stats-section .p-span {
+    display: block;
+    margin-top: .5em;
+    font-size: .5em;
+    color: var(--Gray-500);
+    font-weight: 500;
+}
+
+.stats-section progress {
+    width: 100%;
+    appearance: none;
+    background-color: var(--Green-700);
+}
+
+.stats-section progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+}
+
+.stats-section progress::-webkit-progress-value {
+    background-color: var(--Green-400);
+    border-radius: 10px;
 }
