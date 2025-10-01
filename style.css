@@ -388,12 +388,28 @@ input and button width 50%
     margin-top: 1em;
     padding: 1em;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 1em;
+    position: relative;
+}
+
+.pledge-input label {
+    position: absolute;
+    top: 28px;
+    left: 30px;
+    color: var(--Gray-500);
+}
+
+.pledge-input input,
+.pledge-input button {
+    padding: 1em;
+    border-radius: 30px;
 }
 
 .pledge-input input {
-    flex: 1;
+    width: 50%;
+    border: 1px solid var(--Gray-500);
+    outline: none;
+    text-align: center;
 }
 
 .pledge-input button {
