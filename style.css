@@ -333,6 +333,10 @@ main>section {
 
 .options-container article:has(input[type="radio"]:checked) {
     border: 1px solid var(--Green-400);
+
+    & .enter-pledge {
+        display: block;
+    }
 }
 
 .options-container article>div {
