@@ -42,13 +42,14 @@ function finishTransaction() {
     const $progressBar = document.querySelector(".stats-section progress");
     $progressBar.value = newValue;
 
-    updateLeftRewards(pledgeValue);
+    updateLeftRewards($pledgeInput.getAttribute("min"));
     closeRewardModal();
 }
 
 function updateLeftRewards(pladgeValue) {
     //get article 1
     const $article = document.querySelector(`.reward-container article:has(button[data-target="${pladgeValue}"])`);
+    if(!$article) return;
     const $p = $article.querySelector("p.left");
    
     let leftValue = parseInt($p.firstChild.textContent);
