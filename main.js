@@ -20,7 +20,13 @@ function initEvents() {
 }
 
 function finishTransaction() {
-    const pledgeValue = parseInt(document.querySelector('article:has(input[type="radio"]:checked) input[type="number"]').value);
+    const $pledgeInput = document.querySelector('article:has(input[type="radio"]:checked) input[type="number"]');
+    const pledgeValue = parseInt($pledgeInput.value);
+    //check if inputs has a value menor que el que debería
+    if (!checkValue($pledgeInput)) {
+        return;
+    }
+    
     const $currentBacked = document.querySelector(".current-backed");
     const text = $currentBacked.childNodes[2].textContent.trim();
     const currentValue = parseInt(text.replace(/,/g, ""), 10);
@@ -36,7 +42,28 @@ function finishTransaction() {
     const $progressBar = document.querySelector(".stats-section progress");
     $progressBar.value = newValue;
 
+    updateLeftRewards(pledgeValue);
     closeRewardModal();
+}
+
+function updateLeftRewards(pladgeValue) {
+    //get article 1
+    const $article = document.querySelector(`.reward-container article:has(button[data-target="${pladgeValue}"])`);
+    const $p = $article.querySelector("p.left");
+   
+    let leftValue = parseInt($p.firstChild.textContent);
+    leftValue--;
+    
+    $p.textContent = leftValue;
+    const $rewardArticle = document.querySelector(`.reward article:has(input[min="${pladgeValue}"]`)
+    const $pReward = $rewardArticle.querySelector("p.left")
+    $pReward.firstChild.textContent = leftValue;
+    
+    //get and change text
+}
+
+function checkValue(input) {
+    return input.value >= input.getAttribute("min");
 }
 
 function handleMenu() {
