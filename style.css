@@ -421,3 +421,47 @@ main>section {
 .pledge-input button {
     flex: 1;
 }
+
+@media (min-width: 1000px) {
+    header {
+        padding: 2em 10em;
+        height: 50dvh;
+        background-image: url("./images/image-hero-desktop.jpg");
+    }
+
+    header>img {
+        width: auto;
+        height: fit-content;
+    }
+
+    header .nav-btn {
+        display: none;
+    }
+
+    header nav ul {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        left: auto;
+        top: auto;
+        transform: translateX(0%);
+        background-color: transparent;
+        width: auto;
+        border-radius: none;
+        box-shadow: none;
+        border: none;
+        z-index: 1;
+        gap: 1em;
+    }
+
+    nav ul li {
+        font-size: 1em;
+        font-weight: 500;
+        padding: 0;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    
+}
