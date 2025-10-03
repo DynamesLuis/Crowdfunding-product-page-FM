@@ -507,4 +507,22 @@ main>section {
             opacity: .8;
         }
     }
+
+    .stats-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .stats-section p {
+        border-right: 1px solid var(--Gray-500);
+        text-align: left;
+        flex: 1;
+        &:last-of-type {
+            border-right: none;
+        }
+    }
+
+    .stats-section progress {
+        
+    }
 }
