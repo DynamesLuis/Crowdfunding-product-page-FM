@@ -463,5 +463,48 @@ main>section {
         cursor: pointer;
     }
 
-    
+    main {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .btn-container {
+        justify-content: space-around;
+    }
+
+    .btn-container .back-btn {
+        flex: 0 1 auto;
+        width: 25%;
+        border-radius: 30px;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    .btn-container .bookmark-btn {
+        width: 22%;
+        display: flex;
+        align-items: center;
+        background-color: #eeee;
+        border-radius: 30px;
+
+        &.bookmarked {
+            &::after {
+                color: var(--Green-700);
+            }
+        }
+
+        &::after {
+            color: var(--Gray-500);
+            font-weight: 700;
+            padding: 1em;
+            font-size: 18px;
+            content: "Bookmark";
+        }
+
+         &:hover {
+            opacity: .8;
+        }
+    }
 }
