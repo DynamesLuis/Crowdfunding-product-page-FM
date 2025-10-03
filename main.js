@@ -44,10 +44,18 @@ function finishTransaction() {
 
     updateLeftRewards($pledgeInput.getAttribute("min"));
     closeRewardModal();
+    showThanksModal();
+}
+
+function showThanksModal() {
+    const $thanksModal = document.querySelector(".thanks");
+    $thanksModal.style.display = "block";
+
+    const $closeBtn = $thanksModal.querySelector("button");
+    $closeBtn.addEventListener('click', () => $thanksModal.style.display = "none");
 }
 
 function updateLeftRewards(pladgeValue) {
-    //get article 1
     const $article = document.querySelector(`.reward-container article:has(button[data-target="${pladgeValue}"])`);
     if(!$article) return;
     const $p = $article.querySelector("p.left");
@@ -59,8 +67,6 @@ function updateLeftRewards(pladgeValue) {
     const $rewardArticle = document.querySelector(`.reward article:has(input[min="${pladgeValue}"]`)
     const $pReward = $rewardArticle.querySelector("p.left")
     $pReward.firstChild.textContent = leftValue;
-    
-    //get and change text
 }
 
 function checkValue(input) {
