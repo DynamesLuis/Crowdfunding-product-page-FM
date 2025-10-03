@@ -3,6 +3,7 @@
 /*400 500 700*/
 :root {
     --Green-400: hsl(176, 50%, 47%);
+    --Green-400-hover: hsl(176, 48%, 37%);
     --Green-700: hsl(176, 72%, 28%);
     --Black: hsl(0, 0%, 0%);
     --Gray-500: hsl(0, 0%, 48%);
@@ -478,7 +479,7 @@ main>section {
         border-radius: 30px;
 
         &:hover {
-            opacity: .8;
+            background-color: var(--Green-400-hover);
         }
     }
 
@@ -522,7 +523,23 @@ main>section {
         }
     }
 
-    .stats-section progress {
-        
+    .reward-container article{
+        position: relative;
+    }
+
+    .reward-container p.pledge {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+    }
+
+    .reward-container .select-btn {
+        position: absolute;
+        right: 1em;
+        bottom: 1.5em;
+
+        &:hover {
+            background-color: var(--Green-400-hover);
+        }
     }
 }
