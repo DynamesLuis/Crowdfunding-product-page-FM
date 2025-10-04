@@ -22,7 +22,6 @@ function initEvents() {
 function finishTransaction() {
     const $pledgeInput = document.querySelector('article:has(input[type="radio"]:checked) input[type="number"]');
     const pledgeValue = parseInt($pledgeInput.value);
-    //check if inputs has a value menor que el que debería
     if (!checkValue($pledgeInput)) {
         return;
     }
@@ -49,7 +48,7 @@ function finishTransaction() {
 
 function showThanksModal() {
     const $thanksModal = document.querySelector(".thanks");
-    $thanksModal.style.display = "block";
+    $thanksModal.style.display = "flex";
 
     const $closeBtn = $thanksModal.querySelector("button");
     $closeBtn.addEventListener('click', () => $thanksModal.style.display = "none");
@@ -67,6 +66,18 @@ function updateLeftRewards(pladgeValue) {
     const $rewardArticle = document.querySelector(`.reward article:has(input[min="${pladgeValue}"]`)
     const $pReward = $rewardArticle.querySelector("p.left")
     $pReward.firstChild.textContent = leftValue;
+
+    if (leftValue === 0);
+
+    updateOutOfStock($article, $rewardArticle);
+}
+
+function updateOutOfStock(articleMain, articleModal) {
+    const buttonSelect = articleMain.querySelector("button");
+    buttonSelect.classList.add("out-of-stock")
+    buttonSelect.textContent = "Out of Stock"
+    articleMain.classList.add("out-of-stock");
+    articleModal.classList.add("out-of-stock");
 }
 
 function checkValue(input) {
