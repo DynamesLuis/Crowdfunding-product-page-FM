@@ -313,6 +313,10 @@ main>section {
     font-size: 1.3em;
 }
 
+.reward-modal input[type="radio"] {
+    accent-color: var(--Green-700);
+}
+
 .reward-modal>p {
     margin-top: 1em;
     color: var(--Gray-500);

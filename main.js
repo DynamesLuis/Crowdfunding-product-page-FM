@@ -67,9 +67,10 @@ function updateLeftRewards(pladgeValue) {
     const $pReward = $rewardArticle.querySelector("p.left")
     $pReward.firstChild.textContent = leftValue;
 
-    if (leftValue === 0);
+    if (leftValue === 0) {
+        updateOutOfStock($article, $rewardArticle);
+    }
 
-    updateOutOfStock($article, $rewardArticle);
 }
 
 function updateOutOfStock(articleMain, articleModal) {
